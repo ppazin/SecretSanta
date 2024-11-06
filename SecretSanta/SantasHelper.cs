@@ -3,23 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace SecretSanta
 {
     public class SantasHelper
     {
-        public List<Osoba> Osobe { get; set; }
-        public List<Osoba> Slobodni { get; set; }
+        public BindingList<Osoba> Osobe { get; set; }
+        public BindingList<Osoba> Slobodni { get; set; }
 
         public SantasHelper()
         {
-            Osobe = new List<Osoba>();
-            Slobodni = new List<Osoba>();
+            Osobe = new BindingList<Osoba>();
+            Slobodni = new BindingList<Osoba>();
         }
 
         public void DodajOsobu(string ime, string prezime) 
         {
-            Osoba osoba = new Osoba(ime, prezime, false);
+            Osoba osoba = new Osoba(ime, prezime);
             Osobe.Add(osoba);
             Slobodni.Add(osoba);
         }
@@ -32,12 +34,22 @@ namespace SecretSanta
                 {
                     Osobe.Remove(osoba);
                     Slobodni.Remove(osoba);
+                    break;
                 }
             }
         }
 
         public Osoba DodjeliSantu(string ime, string prezime)
         {
+
+            foreach(var osoba in Osobe)
+            {
+                if (osoba.Ime == ime && osoba.Prezime == prezime && osoba.ImaSantu == true)
+                {
+                    return null;
+                }
+            }
+
             List<Osoba> mogucOdabir = new List<Osoba>();
 
             foreach(var osoba in Slobodni)
@@ -57,6 +69,15 @@ namespace SecretSanta
                 {
                     Slobodni.RemoveAt(i);
                     break;
+                }
+            }
+
+
+            foreach(var osoba in Osobe)
+            {
+                if(osoba.Ime == ime && osoba.Prezime == prezime) 
+                {
+                    osoba.ImaSantu = true;
                 }
             }
 

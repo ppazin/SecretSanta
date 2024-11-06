@@ -13,11 +13,11 @@ namespace SecretSanta
 
         public bool ImaSantu { get; set; }
 
-        public Osoba(string ime, string prezime, bool imaSantu)
+        public Osoba(string ime, string prezime)
         {
             Ime = ime;
             Prezime = prezime;
-            ImaSantu = imaSantu;
+            ImaSantu = false;
         }
     }
 }
