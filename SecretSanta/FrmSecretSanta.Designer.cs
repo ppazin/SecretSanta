@@ -31,12 +31,12 @@ namespace SecretSanta
         private void InitializeComponent()
         {
             this.lblOsobeSudjeluju = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvOsobe = new System.Windows.Forms.DataGridView();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
             this.btnDodjeli = new System.Windows.Forms.Button();
             this.lblUpute = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOsobe)).BeginInit();
             this.SuspendLayout();
             // 
             // lblOsobeSudjeluju
@@ -51,15 +51,19 @@ namespace SecretSanta
             this.lblOsobeSudjeluju.TabIndex = 0;
             this.lblOsobeSudjeluju.Text = "Osobe koje sudjeluju:";
             // 
-            // dataGridView1
+            // dgvOsobe
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 41);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(443, 311);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvOsobe.BackgroundColor = System.Drawing.Color.SeaGreen;
+            this.dgvOsobe.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvOsobe.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dgvOsobe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOsobe.GridColor = System.Drawing.Color.DarkGreen;
+            this.dgvOsobe.Location = new System.Drawing.Point(23, 41);
+            this.dgvOsobe.Name = "dgvOsobe";
+            this.dgvOsobe.RowHeadersWidth = 51;
+            this.dgvOsobe.RowTemplate.Height = 24;
+            this.dgvOsobe.Size = new System.Drawing.Size(443, 311);
+            this.dgvOsobe.TabIndex = 1;
             // 
             // btnDodaj
             // 
@@ -74,6 +78,7 @@ namespace SecretSanta
             this.btnDodaj.TabIndex = 2;
             this.btnDodaj.Text = "Dodaj novu osobu";
             this.btnDodaj.UseVisualStyleBackColor = false;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // btnObrisi
             // 
@@ -88,6 +93,7 @@ namespace SecretSanta
             this.btnObrisi.TabIndex = 3;
             this.btnObrisi.Text = "Obriši osobu";
             this.btnObrisi.UseVisualStyleBackColor = false;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
             // btnDodjeli
             // 
@@ -102,6 +108,7 @@ namespace SecretSanta
             this.btnDodjeli.TabIndex = 4;
             this.btnDodjeli.Text = "Dodijeli secret santu";
             this.btnDodjeli.UseVisualStyleBackColor = false;
+            this.btnDodjeli.Click += new System.EventHandler(this.btnDodjeli_Click);
             // 
             // lblUpute
             // 
@@ -126,12 +133,12 @@ namespace SecretSanta
             this.Controls.Add(this.btnDodjeli);
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnDodaj);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvOsobe);
             this.Controls.Add(this.lblOsobeSudjeluju);
             this.Name = "FrmSecretSanta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Secret Santa";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOsobe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,7 +147,7 @@ namespace SecretSanta
         #endregion
 
         private System.Windows.Forms.Label lblOsobeSudjeluju;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvOsobe;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.Button btnDodjeli;
