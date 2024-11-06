@@ -93,7 +93,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.BackgroundImage = global::SecretSanta.Properties.Resources.christmas_trees_7576912_640;
             this.ClientSize = new System.Drawing.Size(348, 304);
             this.Controls.Add(this.btnUnos);
             this.Controls.Add(this.txtPrezime);
